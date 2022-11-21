@@ -523,7 +523,7 @@ function deleteNote(noteId) {
 //função em variável para 'desbloquear' noteInput se tela é pequena
 let noteInputEdit = function (event) {
   noteInput.removeAttribute('readonly')
-  labelWrite.innerHTML = '📝 Edite aqui sua nota'
+  labelWrite.innerHTML = '📝 메모지 수정'
 }
 
 //ABRIR NOTA
@@ -548,7 +548,7 @@ function openNote(noteId) {
   } else if (window.screen.width >= 601) {
     noteInput.focus()
     noteButtonCancelEdit.removeAttribute('hidden')
-    labelWrite.innerHTML = '📝 Edite aqui sua nota'
+    labelWrite.innerHTML = '📝 메모지 수정'
     editNote(noteId)
   }
 }
