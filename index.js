@@ -365,9 +365,9 @@ function renderNote() {
     let dateElement = document.createElement('p')
     dateElement.appendChild(
       document.createTextNode(
-        `Criado em: ${new Date(note.id).getDate()}/${findMonth(
+        `작성: ${new Date(note.id).getDate()}/${findMonth(
           new Date(note.id).getMonth()
-        )}/${new Date(note.id).getUTCFullYear()} às ${setTimeNumber(
+        )}/${new Date(note.id).getUTCFullYear()} 시간 ${setTimeNumber(
           new Date(note.id).getHours()
         )}:${setTimeNumber(new Date(note.id).getMinutes())}`
       )
@@ -376,9 +376,9 @@ function renderNote() {
       dateElement.appendChild(document.createElement('br'))
       dateElement.appendChild(
         document.createTextNode(
-          `Última edição: ${new Date(note.editedAt).getDate()}/${findMonth(
+          `최종수정: ${new Date(note.editedAt).getDate()}/${findMonth(
             new Date(note.editedAt).getMonth()
-          )}/${new Date(note.editedAt).getUTCFullYear()} às ${setTimeNumber(
+          )}/${new Date(note.editedAt).getUTCFullYear()} 시간 ${setTimeNumber(
             new Date(note.editedAt).getHours()
           )}:${setTimeNumber(new Date(note.editedAt).getMinutes())}`
         )
@@ -400,29 +400,29 @@ function renderNote() {
 
 function findMonth(number) {
   if (number == 0) {
-    return 'Janeiro'
+    return '1월'
   } else if (number == 1) {
-    return 'Fevereiro'
+    return '2월'
   } else if (number == 2) {
-    return 'Março'
+    return '3월'
   } else if (number == 3) {
-    return 'Abril'
+    return '4월'
   } else if (number == 4) {
-    return 'Maio'
+    return '5월'
   } else if (number == 5) {
-    return 'Junho'
+    return '6월'
   } else if (number == 6) {
-    return 'Julho'
+    return '7월'
   } else if (number == 7) {
-    return 'Agosto'
+    return '8월'
   } else if (number == 8) {
-    return 'Setembro'
+    return '9월'
   } else if (number == 9) {
-    return 'Outubro'
+    return '10월'
   } else if (number == 10) {
-    return 'Novembro'
+    return '11월'
   } else if (number == 11) {
-    return 'Dezembro'
+    return '12월'
   }
 }
 
