@@ -1,4 +1,4 @@
-// ELEMENTOS /////////////////////////////////////
+// ELEMENT /////////////////////////////////////
 let body = document.querySelector('body')
 
 let themeButton = document.querySelector('#theme-container')
@@ -26,12 +26,12 @@ let noteList = document.querySelector('#read-notes-list')
 // VARIÁVEIS IMPORTANTES /////////////////////////////////////
 
 let currentVersion = 1.3
-let noteIdEdit //usada para confirmar qual nota está sendo editada
+let noteIdEdit //어떤 노트가 편집되고 있는지 확인하는 데 사용
 let editMode = false
 
 ///////////////////////////////////////////////////////////////
 
-//INICIALIZAÇÃO //////////////////////////////////////////////
+//초기화 //////////////////////////////////////////////
 
 let noteousMain = JSON.parse(localStorage.getItem('noteous-main')) || []
 let noteousSettings = JSON.parse(localStorage.getItem('noteous-settings'))
@@ -146,9 +146,9 @@ themeButton.addEventListener('click', () => {
 
 //FUNÇÕES /////////////////////////////////////
 
-//GETSETTINGS --> ao atualizar página, recupera dados salvos
+//GETSETTINGS --> 페이지 새로고침 시 저장된 데이터 복구
 function getSettings() {
-  //JÁ ACESSOU NOTEOUS --> recupera dados
+  //엑세스 --> 데이터 복구
   if (noteousSettings != null) {
     if (noteousSettings.noteousVersion != currentVersion) {
       //VERIFICA SE HÁ NOVA VERSÃO
