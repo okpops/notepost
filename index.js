@@ -631,5 +631,5 @@ function exitEditMode() {
   noteButtonAdd.disabled = true
   noteButtonEdit.setAttribute('hidden', 'true')
   noteButtonCancelEdit.setAttribute('hidden', 'true')
-  labelWrite.innerHTML = 'Qual o próximo passo?'
+  labelWrite.innerHTML = '다른 메모장'
 }
