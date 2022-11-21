@@ -265,7 +265,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Recente primeiro')
+        document.createTextNode('정렬기준: Recente primeiro')
       )
     } else if (noteousSettings.sort == 'old') {
       noteList.style.cssText =
@@ -273,7 +273,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Antigo primeiro')
+        document.createTextNode('정렬기준: Antigo primeiro')
       )
     }
   } else {
@@ -283,7 +283,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Antigo primeiro')
+        document.createTextNode('정렬기준: Antigo primeiro')
       )
       noteousSettings.sort = 'old'
       renderNote()
@@ -293,7 +293,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Recente primeiro')
+        document.createTextNode('정렬기준: Recente primeiro')
       )
       noteousSettings.sort = 'recent'
       renderNote()
