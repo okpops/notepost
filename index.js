@@ -185,7 +185,7 @@ function showWelcome() {
   let welcomeText = document.createTextNode(
     `안녕! 오늘은 ${findWeek(new Date(dateNow).getDay())}, ${new Date(
       dateNow
-    ).getDate()} de ${findMonth(new Date(dateNow).getMonth())}`
+    ).getDate()} 일 ${findMonth(new Date(dateNow).getMonth())}`
   )
   welcomeTextContainer.append(welcomeText)
 }
@@ -428,19 +428,19 @@ function findMonth(number) {
 
 function findWeek(number) {
   if (number == 0) {
-    return 'Domingo'
+    return '일요일'
   } else if (number == 1) {
-    return 'Segunda-feira'
+    return '월요일'
   } else if (number == 2) {
-    return 'Terça-feira'
+    return '화요일'
   } else if (number == 3) {
-    return 'Quarta-feira'
+    return '수요일'
   } else if (number == 4) {
-    return 'Quinta-feira'
+    return '목요일'
   } else if (number == 5) {
-    return 'Sexta-feira'
+    return '금요일'
   } else if (number == 6) {
-    return 'Sábado'
+    return '토요일'
   }
 }
 
