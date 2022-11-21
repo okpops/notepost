@@ -340,7 +340,7 @@ function getSettings() {
 function showWelcome() {
   let dateNow = new Date()
   let welcomeText = document.createTextNode(
-    `Olá! Hoje é ${findWeek(new Date(dateNow).getDay())}, ${new Date(
+    안녕하세요! 오늘은 ${findWeek(new Date(dateNow).getDay())}, ${new Date(
       dateNow
     ).getDate()} de ${findMonth(new Date(dateNow).getMonth())}`
   )
@@ -422,7 +422,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Recente primeiro')
+        document.createTextNode('정렬 기준: 최근순')
       )
     } else if (noteousSettings.sort == 'old') {
       noteList.style.cssText =
@@ -430,7 +430,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Antigo primeiro')
+        document.createTextNode('정렬 기준: 오래된순 ')
       )
     }
   } else {
@@ -440,7 +440,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Antigo primeiro')
+        document.createTextNode('정렬 기준: 오래된순')
       )
       noteousSettings.sort = 'old'
       renderNote()
@@ -450,7 +450,7 @@ function sortNotes(context) {
 
       readOptionsSort.innerHTML = ''
       readOptionsSort.append(
-        document.createTextNode('Ordenando por: Recente primeiro')
+        document.createTextNode('정렬 기준: 최근순')
       )
       noteousSettings.sort = 'recent'
       renderNote()
