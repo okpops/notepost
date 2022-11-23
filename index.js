@@ -183,7 +183,7 @@ function getSettings() {
 function showWelcome() {
   let dateNow = new Date()
   let welcomeText = document.createTextNode(
-    `안녕! 오늘은 ${findWeek(new Date(dateNow).getDay())}, ${findMonth(new Date(dateNow).getMonth())}${new Date(dateNow).getDate()} 일`
+    `안녕! 오늘은 ${findWeek(new Date(dateNow).getDay())}, ${findMonth(new Date(dateNow).getMonth())} ${new Date(dateNow).getDate()} 일`
   )
   welcomeTextContainer.append(welcomeText)
 }
