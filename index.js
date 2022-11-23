@@ -541,7 +541,7 @@ function openNote(noteId) {
     noteInput.setAttribute('readonly', true)
     noteInput.focus()
     noteButtonCancelEdit.removeAttribute('hidden')
-    labelWrite.innerHTML = '📄 Veja aqui sua nota'
+    labelWrite.innerHTML = '📄 메모지 수정'
     editNote(noteId)
     noteInput.addEventListener('click', noteInputEdit, false)
   } else if (window.screen.width >= 601) {
