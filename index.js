@@ -23,7 +23,7 @@ let readSection = document.querySelector('#section-read')
 let readOptionsSort = document.querySelector('#read-options-sort')
 let noteList = document.querySelector('#read-notes-list')
 
-// VARIÁVEIS IMPORTANTES /////////////////////////////////////
+// IMPORTANTES /////////////////////////////////////
 
 let currentVersion = 1.3
 let noteIdEdit //어떤 노트가 편집되고 있는지 확인하는 데 사용
@@ -42,14 +42,14 @@ showWelcome()
 
 /////////////////////////////////////////////////////////////
 
-//welcomeToNoteous --> ao acessar 1ª vez ou nova versão
+//welcome
 function welcomeToNoteous(context) {
   setTheme('setThemeLight')
-  //context --> primeiro acesso ou nova versão
+  //context --> prime
   if (context == 'first-access') {
-    //Configuração da tela de Boas vindas (noteous 1.0)
+    //Config (note 1.0)
 
-    //Panel e Section
+    //Panel Section
     //greetingPanel --> sectionMain + sectionTitle
     let greetingPanel = document.createElement('div')
     greetingPanel.classList.add('greeting-panel')
@@ -83,7 +83,7 @@ function welcomeToNoteous(context) {
   }
 }
 
-// CONFIGURAÇÕES DE TEMA ////////////////////////////////////
+// CONFIG TEMA ////////////////////////////////////
 function setTheme(context) {
   //context => recuperar tema, trocar tema, aplicar tema claro, aplicar tema escuro
   if (context == 'retrieveTheme') {
@@ -144,14 +144,14 @@ themeButton.addEventListener('click', () => {
   setTheme('changeTheme')
 })
 
-//FUNÇÕES /////////////////////////////////////
+//기능 /////////////////////////////////////
 
 //GETSETTINGS --> 페이지 새로고침 시 저장된 데이터 복구
 function getSettings() {
   //엑세스 --> 데이터 복구
   if (noteousSettings != null) {
     if (noteousSettings.noteousVersion != currentVersion) {
-      //VERIFICA SE HÁ NOVA VERSÃO
+      //VERIFY
       noteousSettings = {
         noteousVersion: currentVersion,
         sort: 'recent',
@@ -160,15 +160,15 @@ function getSettings() {
       welcomeToNoteous('new-version')
       localStorage.setItem('noteous-settings', JSON.stringify(noteousSettings))
     } else {
-      //SE NÃO HÁ NOVA VERSÃO
+      //SE
 
-      //Aplica última ordenação
+      //Aplica 
       sortNotes('retrieveSort')
-      //Aplica último tema
+      //Aplica
       setTheme('retrieveTheme')
     }
   } else if (noteousSettings == null) {
-    //NÃO HÁ CONFIGURAÇÕES --> PRIMEIRO ACESSO AO NOTEOUS
+    //CONFIG--> PRIME ACESS
     noteousSettings = {
       noteousVersion: currentVersion,
       sort: 'recent',
@@ -179,7 +179,7 @@ function getSettings() {
   }
 }
 
-//MOSTRAR BOAS VINDAS
+//
 function showWelcome() {
   let dateNow = new Date()
   let welcomeText = document.createTextNode(
@@ -188,14 +188,14 @@ function showWelcome() {
   welcomeTextContainer.append(welcomeText)
 }
 
-//OPÇÕES DE NOTA
-//Ao carregar, Define prioridade = solid, Salva nas configurações e Aplica
+//DATA
+// carreg, Define priorid = solid, configuration
 noteousSettings.priority = 'solid'
 localStorage.setItem('noteous-settings', JSON.stringify(noteousSettings))
 notePriority('retrievePriority', noteousSettings.priority)
 
 function notePriority(context, priority) {
-  //context ==> recuperar prioridade, recuperar prioridade ao tirar foco do input(ao tirar foco define opacidade = 0 de Opções da Nota. Mas, é necessário também definir junto a borda, pois ao contrário um sobrescreve o outro), trocar prioridade
+  //context ==> priori
   if (context == 'retrievePriority') {
     if (priority == 'solid') {
       writeOptions.style.cssText = 'border-style: solid;'
@@ -255,7 +255,7 @@ writeOptions.addEventListener('click', () => {
   notePriority('changePriority', noteousSettings.priority)
 })
 
-//BOTÃO ORDENAR NOTAS
+// 정렬기준
 function sortNotes(context) {
   if (context == 'retrieveSort') {
     if (noteousSettings.sort == 'recent') {
@@ -302,7 +302,7 @@ function sortNotes(context) {
 
 readOptionsSort.addEventListener('click', sortNotes)
 
-//RENDERIZAR NOTAS
+//
 function renderNote() {
   noteList.innerHTML = ''
 
@@ -310,7 +310,7 @@ function renderNote() {
     let noteContainer = document.createElement('div')
     noteContainer.classList.add('note-container')
 
-    //BORDER/PRIORITY
+    //메모지 순서
     if (note.priority == 'solid') {
       noteContainer.style.cssText = 'border-style: none;'
     } else if (note.priority == 'double') {
@@ -374,10 +374,10 @@ function renderNote() {
       dateElement.appendChild(document.createElement('br'))
       dateElement.appendChild(
         document.createTextNode(
-          `최종수정: ${new Date(note.editedAt).getDate()}/${findMonth(
-            new Date(note.editedAt).getMonth()
-          )}/${new Date(note.editedAt).getUTCFullYear()} 시간 ${setTimeNumber(
-            new Date(note.editedAt).getHours()
+          `최종수정: ${new Date(note.id).getUTCFullYear()}년 ${findMonth(
+            new Date(note.id).getMonth()
+          )} ${new Date(note.id).getDate()}일 시간 ${setTimeNumber(
+            new Date(note.id).getHours()
           )}:${setTimeNumber(new Date(note.editedAt).getMinutes())}`
         )
       )
@@ -442,7 +442,7 @@ function findWeek(number) {
   }
 }
 
-//função para retornar número com 00 --> Exmpl: 09:05 (pois Date.getMinutes, .getHours retorna hora/minuto apenas com '0' --> Exmpl: 9:5, mas é preciso ser com '00'
+
 function setTimeNumber(number) {
   if (number == 0) {
     return '00'
