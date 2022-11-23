@@ -363,9 +363,9 @@ function renderNote() {
     let dateElement = document.createElement('p')
     dateElement.appendChild(
       document.createTextNode(
-        `작성: ${new Date(note.id).getDate()}/${findMonth(
+        `작성: ${new Date(note.id).getUTCFullYear()}년 ${findMonth(
           new Date(note.id).getMonth()
-        )}/${new Date(note.id).getUTCFullYear()} 시간 ${setTimeNumber(
+        )} ${new Date(note.id).getDate()}일 시간 ${setTimeNumber(
           new Date(note.id).getHours()
         )}:${setTimeNumber(new Date(note.id).getMinutes())}`
       )
